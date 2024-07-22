@@ -11,7 +11,7 @@ namespace arraySum
             int columnIndex = 0;
             int lineIndex = 1;
 
-            int[,] array = new int[3, 3]
+            int[,] numbers = 
             {
                 { 3,5,6 },
                 { 6,7,4 },
@@ -20,28 +20,28 @@ namespace arraySum
 
             Console.WriteLine("Дана исходная матрица: ");
 
-            for (int i = 0; i < array.GetLength(0); i++)
+            for (int i = 0; i < numbers.GetLength(0); i++)
             {
-                for (int j = 0; j < array.GetLength(1); j++)
+                for (int j = 0; j < numbers.GetLength(1); j++)
                 {
-                    Console.Write(array[i, j] + " ");
+                    Console.Write(numbers[i, j] + " ");
                 }
 
                 Console.WriteLine();
             }
 
-            for (int i = 0; i < array.GetLength(0); i++)
+            for (int i = 0; i < numbers.GetLength(0); i++)
             {
-                sum += (array[lineIndex, i]);
+                sum += (numbers[lineIndex, i]);
             }
 
-            for (int j = 0; j < array.GetLength(1); j++)
+            for (int j = 0; j < numbers.GetLength(1); j++)
             {
-                compositionValue *= array[j, columnIndex];
+                compositionValue *= numbers[j, columnIndex];
             }
 
-            Console.WriteLine("\nСумма второй строки: " + sum);
-            Console.WriteLine("\nПроизведение первого столбца: " + compositionValue);
+            Console.WriteLine($"\nСумма строки {lineIndex + 1} = {sum} ");
+            Console.WriteLine($"\nПроизведение столбца {columnIndex + 1} = {compositionValue}");
         }
     }
 }
